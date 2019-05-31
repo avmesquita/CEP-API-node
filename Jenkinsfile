@@ -1,15 +1,27 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                npm i -save express
-                npm i -save body-parser
-				npm i -save path
-				npm i -save knex
-				npm i -save sqlite3
-            }
-        }
+  agent any
+ 
+  tools {nodejs "node"}
+ 
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm i -save express'
+	sh 'npm i -save body-parser'
+	sh 'npm i -save path'
+	sh 'npm i -save knex'
+	sh 'npm i -save sqlite3'	      
+      }
     }
-} 
+    stage('Example') {
+      steps {
+        sh 'npm i -save express'
+	sh 'npm i -save body-parser'
+	sh 'npm i -save path'
+	sh 'npm i -save knex'
+	sh 'npm i -save sqlite3'
+	sh 'node server.js'
+      }
+    }	  
+  }
+}
