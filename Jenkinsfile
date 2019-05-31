@@ -6,7 +6,7 @@ pipeline {
   stages {	  
     stage('Cloning Git') {
       steps {
-        git 'https://https://github.com/avmesquita/CEP-API-node'
+        git 'https://github.com/avmesquita/CEP-API-node'
       }
     }        
     stage('Install dependencies') {
