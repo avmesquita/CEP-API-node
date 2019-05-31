@@ -1,0 +1,22 @@
+{
+  "name": "node.CEP",
+  "version": "1.0.0",
+  "description": "CEP REST API Service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "knex": "^0.16.5",
+    "knex-filter": "^0.1.3",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
