@@ -3,25 +3,26 @@ pipeline {
  
   tools {nodejs "node"}
  
-  stages {
-    stage('Build') {
+  stages {	  
+    stage('Cloning Git') {
+      steps {
+        git 'https://https://github.com/avmesquita/CEP-API-node'
+      }
+    }        
+    stage('Install dependencies') {
       steps {
         sh 'npm i -save express'
 	sh 'npm i -save body-parser'
 	sh 'npm i -save path'
 	sh 'npm i -save knex'
 	sh 'npm i -save sqlite3'	      
+        sh 'npm install'
       }
-    }
-    stage('Example') {
+    }     
+    stage('Test') {
       steps {
-        sh 'npm i -save express'
-	sh 'npm i -save body-parser'
-	sh 'npm i -save path'
-	sh 'npm i -save knex'
-	sh 'npm i -save sqlite3'
-	sh 'node server.js'
+         sh 'node server.js'
       }
-    }	  
+    }   	  	  
   }
 }
