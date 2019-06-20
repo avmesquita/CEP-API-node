@@ -32,7 +32,7 @@
     $> npm i -save path
     $> npm i -save knex
     $> npm i -save sqlite3
-	$> npm i -save swagger-ui-express
+    $> npm i -save swagger-ui-express
     $> node server.js
   </pre>
 </p>  
