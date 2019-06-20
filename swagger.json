@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API de CEP Gratuita",
+    "description": "API de CEP Gratuita",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+	"contact": {
+	  "name": "Andre Mesquita",
+	  "url": "https://www.andremesquita.com/",
+	  "email": "andre@avmsistemas.net"
+	}
+  },
+  "basePath": "/api/v1",  
+  "tags": [
+    {
+      "name": "CEP",
+      "description": "Busca de CEP",
+      "externalDocs": {
+        "description": "Public Project",
+        "url": "https://www.andremesquita.com/rest-api-service-cep-correios-gratuito-github-dockerhub/"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json",
+    "application/xml"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "paths": {
+    "/cep/{filter}": {
+      "get": {
+        "tags": [
+          "cep"
+        ],
+        "summary": "Busca de CEP",
+        "description": "Retorna o endereço completo do CEP",
+        "operationId": "cep",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "description": "Código do CEP, UF, Cidade, Bairro e/ou Localidade",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "schema": {
+              "$ref": "#/definitions/Cep"
+            }
+          },
+          "400": {
+            "description": "Verifique sua implementação para utilização"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Cep": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int32",
+          "description": "código sequencial único"
+        },
+        "TXT_CEP": {
+          "type": "string",
+          "description": "Código de Endereçamento Postal"
+        },
+        "TXT_CIDADE_UF": {
+          "type": "string",
+          "description": "Município / Cidade"
+        },
+        "TXT_BAIRRO": {
+          "type": "string",
+          "description": "Bairro ou localidade"
+        },
+        "TXT_LOCALIDADE": {
+          "type": "string",
+          "description": "Localidade ou Logradouro"
+        }
+      },
+      "xml": {
+        "name": "Cep"
+      }
+    }
+  }
+}
