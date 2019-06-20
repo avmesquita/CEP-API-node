@@ -1,0 +1,42 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API de CEP Gratuita",
+    "description": "API de CEP Gratuita",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "CEP",
+      "description": "Endpoind de busca de CEP"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/cep/{filter}": {
+      "parameters": [
+        {
+          "name": "filter",
+          "in": "path",
+          "required": true,
+          "description": "Código do CEP, UF, Cidade e/ou Bairro",
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
