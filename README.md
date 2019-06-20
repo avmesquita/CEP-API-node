@@ -24,6 +24,7 @@
     <li>node.CEP</li>    
     <li><a href="https://hub.docker.com/r/avmesquita/apicepnode">Docker Hub Image</a></li>
     <li><a href="http://consulta-cep-api-cep.apps.us-east-2.online-starter.openshift.com/">Openshift Starter test endpoint</a></li>
+    <li><a href="http://avmservice-api-cep.apps.us-east-2.online-starter.openshift.com/">new Swagger Version</a></li>
   </ul>  
   <pre>
     <b>=> To Build</b>
