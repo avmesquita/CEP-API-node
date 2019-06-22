@@ -69,7 +69,106 @@
           }
         }
       }
-    }
+    },
+    "/bairro/{filter}": {
+      "get": {
+        "tags": [
+          "cep"
+        ],
+        "summary": "Busca por Bairro",
+        "description": "Retorna o endereço completo do CEP",
+        "operationId": "cep",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "description": "Bairro",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "schema": {
+              "$ref": "#/definitions/Cep"
+            }
+          },
+          "400": {
+            "description": "Verifique sua implementação para utilização"
+          }
+        }
+      }
+    },
+    "/cidade/{filter}": {
+      "get": {
+        "tags": [
+          "cep"
+        ],
+        "summary": "Busca de Cidade",
+        "description": "Retorna o endereço completo do CEP",
+        "operationId": "cep",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "description": "Cidade",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "schema": {
+              "$ref": "#/definitions/Cep"
+            }
+          },
+          "400": {
+            "description": "Verifique sua implementação para utilização"
+          }
+        }
+      }
+    },
+    "/localidade/{filter}": {
+      "get": {
+        "tags": [
+          "cep"
+        ],
+        "summary": "Busca de Localidade",
+        "description": "Retorna o endereço completo do CEP",
+        "operationId": "cep",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "description": "Localidade",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "schema": {
+              "$ref": "#/definitions/Cep"
+            }
+          },
+          "400": {
+            "description": "Verifique sua implementação para utilização"
+          }
+        }
+      }
+    }	
   },
   "definitions": {
     "Cep": {
@@ -80,19 +179,19 @@
           "format": "int32",
           "description": "código sequencial único"
         },
-        "TXT_CEP": {
+        "cep": {
           "type": "string",
           "description": "Código de Endereçamento Postal"
         },
-        "TXT_CIDADE_UF": {
+        "cidadeUf": {
           "type": "string",
           "description": "Município / Cidade"
         },
-        "TXT_BAIRRO": {
+        "bairro": {
           "type": "string",
           "description": "Bairro ou localidade"
         },
-        "TXT_LOCALIDADE": {
+        "localidade": {
           "type": "string",
           "description": "Localidade ou Logradouro"
         }

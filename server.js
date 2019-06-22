@@ -18,30 +18,67 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/api/v1/cep/:filter', (req, res) => {
 
- filter = req.params.filter;
+	filter = req.params.filter;
+	
+	if (filter != '') {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade')
+	                   .orWhere('txt_cep', filter)	 	                   
+					   .limit(10);
+	} else {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade').limit(10)
+	}
+	
+	list()
+	.then(data => res.json(data))
+})
 
- if (filter != '') {
-     list = () =>  knex('cep').select('*')
-	                   .orWhere('txt_cep', filter)	 
-	                   .orWhere('txt_cidade_uf', 'like', '%'+filter+'%')	 
-					   .orWhere('txt_bairro', 'like', '%'+filter+'%')	 
+app.get('/api/v1/bairro/:filter', (req, res) => {
+
+	filter = req.params.filter;
+	
+	if (filter != '') {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade')	   
+					   .orWhere('txt_bairro', 'like', '%'+filter+'%')	 					   
+					   .limit(10);
+	} else {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade').limit(10)
+	}
+	
+	list()
+	.then(data => res.json(data))
+})
+
+app.get('/api/v1/cidade/:filter', (req, res) => {
+
+	filter = req.params.filter;
+	
+	if (filter != '') {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade')	   
+					   .orWhere('txt_cidade_uf', 'like', '%'+filter+'%')
+					   .limit(10);
+	} else {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade').limit(10)
+	}
+	
+	list()
+	.then(data => res.json(data))
+})
+
+app.get('/api/v1/localidade/:filter', (req, res) => {
+
+	filter = req.params.filter;
+	
+	if (filter != '') {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade')	   
 					   .orWhere('txt_localidade', 'like', '%'+filter+'%')
 					   .limit(10);
- } else {
-	 list = () =>  knex('cep').select('*').limit(10)
- }
-  list()
-    .then(data => res.json(data))
-})
-
-/*
-app.get('/', (req, res) => {
+	} else {
+		list = () =>  knex('cep').select('ID','txt_cep as cep','txt_cidade_uf as cidadeUf','txt_bairro as bairro','txt_localidade as localidade').limit(10)
+	}
 	
-  hostname = req.headers.host;
-  
-  res.json('{ "usage" : "${hostname}/api/v1/cep/<value>" }');
+	list()
+	.then(data => res.json(data))
 })
-*/
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
