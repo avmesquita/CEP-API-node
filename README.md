@@ -20,8 +20,7 @@
   
 <h2> NodeJs REST API Service</h2>
 <p>
-  <ul>
-    <li>node.CEP</li>    
+  <ul>    
     <li>Docker Hub => <a href="https://hub.docker.com/r/avmesquita/apicepnode">Image</a></li>
     <li>OpenShift  => <a href="http://consulta-cep-api-cep.apps.us-east-2.online-starter.openshift.com/">Production</a></li>    
     <li>Heroku     => <a href="https://api-cep-node.herokuapp.com/">Published</a></li>
