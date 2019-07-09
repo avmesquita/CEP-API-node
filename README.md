@@ -22,10 +22,9 @@
 <p>
   <ul>
     <li>node.CEP</li>    
-    <li><a href="https://hub.docker.com/r/avmesquita/apicepnode">Docker Hub Image</a></li>
-    <li><a href="http://consulta-cep-api-cep.apps.us-east-2.online-starter.openshift.com/">: Production version</a></li>
-    <li><a href="http://avmservice-api-cep.apps.us-east-2.online-starter.openshift.com/">: Latest version</a></li>
-    <li>Heroku => <a href="https://api-cep-node.herokuapp.com/">Published</a></li>
+    <li>Docker Hub => <a href="https://hub.docker.com/r/avmesquita/apicepnode">Image</a></li>
+    <li>OpenShift  => <a href="http://consulta-cep-api-cep.apps.us-east-2.online-starter.openshift.com/">Production</a></li>    
+    <li>Heroku     => <a href="https://api-cep-node.herokuapp.com/">Published</a></li>
   </ul>  
   <pre>
     <b>=> To Build</b>
