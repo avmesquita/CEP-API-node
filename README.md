@@ -28,6 +28,7 @@
   <pre>
     <b>=> To Build</b>
     $> npm i -save express
+	$> npm i -save cors
     $> npm i -save body-parser
     $> npm i -save path
     $> npm i -save knex
