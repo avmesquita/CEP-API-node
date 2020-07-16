@@ -42,6 +42,6 @@
 <p>
    <ul>
      <li>Github => <a href="https://github.com/avmesquita/angular-buscarcep">Source Code</a></li>	
-     <li>DockerHub => <a href="https://hub.docker.com/repository/docker/avmesquita/angular-buscarcep">Image</a><li>
+     <li>DockerHub => <a href="https://hub.docker.com/repository/docker/avmesquita/angular-buscarcep">Image</a></li>
    </ul>
 </p>
