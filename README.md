@@ -40,6 +40,8 @@
 
 <h2> App Angular</h2>
 <p>
-   <ul>Github => <a href="https://github.com/avmesquita/angular-buscarcep">Source Code</a><li>	
-   <ul>DockerHub => <a href="https://hub.docker.com/repository/docker/avmesquita/angular-buscarcep">Image</a><li>	
+   <ul>
+     <li>Github => <a href="https://github.com/avmesquita/angular-buscarcep">Source Code</a></li>	
+     <li>DockerHub => <a href="https://hub.docker.com/repository/docker/avmesquita/angular-buscarcep">Image</a><li>
+   </ul>
 </p>
